@@ -22,7 +22,7 @@
         $real = $_GET ["money"] ?? 0;
         $dolar = $real * $cotacao;
         $default = numfmt_create("pt-BR", NumberFormatter::CURRENCY);
-        echo "Com " . numfmt_format_currency($default, $real, "USD"). ", você terá <strong>" . numfmt_format_currency($default, $dolar, "BRL")."</strong>";
+        echo "Com " . numfmt_format_currency($default, $real, "BRL"). ", você terá <strong>" . numfmt_format_currency($default, $dolar, "USD")."</strong>";
     ?>
     <p>Calculado com base na cotação atual fornecido pelo <strong>Banco Central do Brasil</strong></p>
     <button onclick="javascript:history.go(-1)">Voltar</button>
