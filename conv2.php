@@ -19,7 +19,7 @@
         $dados = json_decode(file_get_contents($url), true);
         //var_dump($dados);
         $cotacao = $dados["value"][0]["cotacaoCompra"];
-        $real = $_GET ["money"] ?? 0;
+        $real = $_GET ["dinheiro"] ?? 0;
         $dolar = $real * $cotacao;
         $default = numfmt_create("pt-BR", NumberFormatter::CURRENCY);
         echo "Com " . numfmt_format_currency($default, $real, "BRL"). ", você terá <strong>" . numfmt_format_currency($default, $dolar, "USD")."</strong>";
